@@ -183,4 +183,6 @@ export interface AiRequest extends AuditFields {
   intent: "search" | "summary" | "schedule" | "scholarship_match" | "translation" | "research_assist";
   input: string;
   status: "queued" | "completed" | "failed";
+  response?: string;
+  error?: string;
 }
