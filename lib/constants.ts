@@ -11,17 +11,17 @@ export const siteConfig = {
     location: "Florida, United States of America",
   } as const,
   navItems: [
+    { label: "Blueprint", href: "/blueprint" },
     { label: "Dashboard", href: "/dashboard" },
     { label: "Directory", href: "/directory" },
-    { label: "Profiles", href: "/profiles" },
     { label: "Campus Room", href: "/campus-room" },
-    { label: "Research", href: "/research" },
+    { label: "AI Engine", href: "/ai-engine" },
   ],
   cta: { label: "Join waitlist", href: "/auth" },
 };
 
 export const impactMetrics: Metric[] = [
+  { value: "11", label: "core modules mapped from the original Campusify blueprint" },
   { value: "180+", label: "countries planned for academic discovery" },
-  { value: "8", label: "MVP modules for launch validation" },
   { value: "24/7", label: "global study and collaboration access" },
 ];
