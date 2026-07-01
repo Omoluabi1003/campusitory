@@ -7,6 +7,8 @@ export function Footer() {
         <div>
           <p className="text-xl font-semibold">{siteConfig.name}</p>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-white/65">{siteConfig.description}</p>
+          <p className="mt-4 text-sm font-semibold text-white/80">Designed and Developed by {siteConfig.architect.company}</p>
+          <p className="mt-1 text-xs text-white/55">Platform Architecture by {siteConfig.architect.lead}, Project Architect & Lead Developer</p>
         </div>
         <div className="flex flex-wrap gap-4 lg:justify-end">
           {siteConfig.navItems.map((item) => (

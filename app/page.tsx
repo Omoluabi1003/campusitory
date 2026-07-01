@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { FeatureCard } from "@/components/ui/FeatureCard";
-import { features } from "@/data/features";
 import { platformModules } from "@/data/platform";
 import { impactMetrics, siteConfig } from "@/lib/constants";
 
@@ -22,9 +20,9 @@ const processSteps = [
 ];
 
 const advantages = [
-  "Route-based platform structure for each academic surface",
+  "Eleven connected modules for each academic surface",
   "ETL GIS Consulting LLC representation with a global education lens",
-  "Modular data foundation that can grow without adding paid services",
+  "Source-aware data foundation for trusted growth",
   "Professional motion system designed to support readability",
 ];
 
@@ -53,10 +51,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/dashboard" className="rounded-full bg-ink px-7 py-4 text-center text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-academy">
-                Open platform dashboard
+                Open Mission Control
               </Link>
-              <Link href="/directory" className="rounded-full border border-ink/15 bg-white/70 px-7 py-4 text-center text-sm font-semibold text-ink shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-campus hover:text-campus">
-                Explore institution directory
+              <Link href="/institution-network" className="rounded-full border border-ink/15 bg-white/70 px-7 py-4 text-center text-sm font-semibold text-ink shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-campus hover:text-campus">
+                Explore Institution Network
               </Link>
             </div>
           </div>
@@ -72,7 +70,7 @@ export default function Home() {
                 {platformModules.slice(0, 5).map((module, index) => (
                   <Link
                     key={module.slug}
-                    href={`/${module.slug}`}
+                    href={module.href}
                     className="hero-module-card absolute inset-x-0 top-0 rounded-3xl border border-white/10 bg-white/8 p-5 backdrop-blur transition hover:bg-white/14"
                     style={{ animationDelay: `${index * 2.8}s` }}
                   >
@@ -102,12 +100,17 @@ export default function Home() {
 
         <section className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">Platform modules</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">A connected academic system with dedicated product surfaces.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">Enterprise platform modules</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">A connected academic system organized around eleven enduring modules.</h2>
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {features.map((feature, index) => (
-              <FeatureCard key={feature.title} feature={feature} index={index} />
+            {platformModules.map((module) => (
+              <Link key={module.slug} href={module.href} className="rounded-3xl border border-white/70 bg-white/75 p-6 shadow-soft transition hover:-translate-y-1 hover:border-campus/40">
+                <p className="font-serif text-3xl text-gold/75">{String(module.id).padStart(2, "0")}</p>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.24em] text-campus">{module.eyebrow}</p>
+                <h3 className="mt-3 text-xl font-semibold text-ink">{module.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{module.description}</p>
+              </Link>
             ))}
           </div>
         </section>

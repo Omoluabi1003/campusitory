@@ -12,16 +12,23 @@ export const siteConfig = {
   } as const,
   navItems: [
     { label: "Dashboard", href: "/dashboard" },
-    { label: "Directory", href: "/directory" },
-    { label: "Profiles", href: "/profiles" },
+    { label: "Institution Network", href: "/institution-network" },
+    { label: "Academic Identity", href: "/academic-identity" },
     { label: "Campus Room", href: "/campus-room" },
-    { label: "Research", href: "/research" },
+    { label: "Academic Social", href: "/academic-social" },
+    { label: "Opportunities", href: "/opportunities" },
+    { label: "Research Library", href: "/research-library" },
+    { label: "Professional Network", href: "/professional-network" },
+    { label: "Student Life", href: "/student-life" },
+    { label: "Academic Intelligence", href: "/academic-intelligence" },
+    { label: "Trust & Access", href: "/trust-access" },
+    { label: "Global Languages", href: "/global-languages" },
   ],
   cta: { label: "Join waitlist", href: "/auth" },
 };
 
 export const impactMetrics: Metric[] = [
   { value: "180+", label: "countries planned for academic discovery" },
-  { value: "8", label: "MVP modules for launch validation" },
+  { value: "11", label: "connected platform modules" },
   { value: "24/7", label: "global study and collaboration access" },
 ];
