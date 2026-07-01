@@ -24,17 +24,17 @@ export function ModulePage({ module }: ModulePageProps) {
           </div>
 
           <aside className="rounded-[2rem] bg-ink p-8 text-white shadow-soft">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Build posture</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Product direction</p>
             <p className="mt-4 text-sm leading-7 text-white/70">
-              Every PR must advance user value through frontend, backend, or platform-quality improvement. This route documents the current capability boundary before deeper implementation.
+              Campusify is being developed through a disciplined, secure, and scalable product roadmap for global academic communities.
             </p>
           </aside>
         </section>
 
         <section className="mt-8 grid gap-5 lg:grid-cols-3">
-          <CapabilityCard title="Frontend progress" items={module.frontEndProgress} />
-          <CapabilityCard title="Backend progress" items={module.backEndProgress} />
-          <CapabilityCard title="Next build" items={module.nextBuild} />
+          <CapabilityCard title="User experience" items={module.frontEndProgress} />
+          <CapabilityCard title="Platform foundation" items={module.backEndProgress} />
+          <CapabilityCard title="Coming next" items={module.nextBuild} />
         </section>
       </main>
       <Footer />
@@ -48,7 +48,7 @@ function CapabilityCard({ title, items }: { title: string; items: string[] }) {
       <h2 className="text-lg font-semibold text-ink">{title}</h2>
       <ul className="mt-5 space-y-3">
         {items.map((item, index) => (
-          <li key={index} className="flex gap-3 text-sm leading-6 text-slate-600">
+          <li key={`${item}-${index}`} className="flex gap-3 text-sm leading-6 text-slate-600">
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-campus" />
             <span>{item}</span>
           </li>
