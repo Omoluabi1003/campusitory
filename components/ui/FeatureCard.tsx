@@ -14,6 +14,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
     <Link
       href={targetHref}
       className="group rounded-3xl border border-white/70 bg-white/85 p-6 shadow-soft transition hover:-translate-y-1 hover:border-gold/60 hover:bg-white"
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       <div className="mb-8 flex items-center justify-between gap-4">
         <span className="rounded-full bg-campus/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-campus">
