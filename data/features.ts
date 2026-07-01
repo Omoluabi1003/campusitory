@@ -55,7 +55,7 @@ export const features: Feature[] = [
     description:
       "Design for translated learning spaces, regional academic communities, and globally inclusive onboarding.",
     category: "language",
-    href: "/dashboard",
+    href: "/language",
   },
   {
     title: "Pricing Preview",
@@ -63,6 +63,6 @@ export const features: Feature[] = [
     description:
       "Preview future plans for learners, institutions, and professional bodies without locking the MVP to billing complexity.",
     category: "pricing",
-    href: "/dashboard",
+    href: "/pricing",
   },
 ];
