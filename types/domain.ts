@@ -131,6 +131,7 @@ export interface Assignment extends AuditFields {
 export interface Opportunity extends AuditFields {
   id: ID;
   title: string;
+  description?: string;
   type: OpportunityType;
   providerName: string;
   country?: string;
