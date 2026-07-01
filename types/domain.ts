@@ -108,6 +108,7 @@ export interface CampusSession extends AuditFields {
   startsAt: ISODateTime;
   endsAt?: ISODateTime;
   hostUserId: ID;
+  meetingUrl?: string;
   recordingUrl?: string;
 }
 
