@@ -1,6 +1,6 @@
 # Campusify
 
-Campusify is a global academic platform connecting verified students, lecturers, institutions, researchers, and professional bodies through virtual lectures, research access, scholarships, AI study tools, multilingual learning, and secure academic communities.
+Campusify, also known as Campusitory, is a global academic platform connecting institutions, students, lecturers, researchers, professional organizations, academic opportunities, live learning, research materials, student activities, secure access, and multilingual academic discovery.
 
 ## Project Representation
 
@@ -8,9 +8,21 @@ Campusify development architecture is represented by **ETL GIS Consulting LLC**,
 
 Every development decision should preserve the product posture as secure global academic infrastructure, not a generic learning management system.
 
-## Vision
+## Original 11-Module Blueprint
 
-The product goal is to become trusted academic infrastructure for borderless learning and research. The MVP starts with a premium public shell that validates positioning, core modules, and navigation before adding authentication, data persistence, and AI workflows.
+All product work must map to the master blueprint in [`data/blueprint.ts`](data/blueprint.ts) and the public blueprint route at `/blueprint`.
+
+1. Global Institutions
+2. Registration and Academic Identity
+3. Lecture Board Room
+4. Personal Page and Academic Social Layer
+5. Scholarship, Grants, Loans, and Jobs Gantry
+6. Thesis, Books, and Academic Materials
+7. Professional and Chartered Organizations
+8. Student Union, Games, and Competitions
+9. AI Search Engine and Scheduler
+10. Subscriptions, Restricted Access, and Identity Protection
+11. International Language Console
 
 ## Stack
 
@@ -18,48 +30,41 @@ The product goal is to become trusted academic infrastructure for borderless lea
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Deployment:** Vercel-ready
-- **Data:** Typed mock data only for the foundation phase
+- **Data:** Typed local data for early validation before external services
 
-## Current MVP Shell
+## Current Platform Surfaces
 
-The homepage includes professional, responsive sections for:
-
-- Hero
-- Institution Directory
-- Verified Academic Profiles
-- Campus Room
-- Scholarships and Opportunities
-- Research Library
-- AI Academic Engine
-- Multilingual Console
-- Pricing Preview
-
-Authentication is intentionally represented by a placeholder `/auth` route. No database, paid API, or production authentication flow is included yet.
+- `/blueprint` master operating map
+- `/dashboard` 11-module platform command center
+- `/directory` institution discovery and filters
+- `/ai-engine` academic guidance preview
+- `/campus-room` lecture board room direction
+- `/research` research and academic materials direction
+- `/language` international language console direction
+- `/pricing` access, restricted pages, and subscription direction
 
 ## Project Structure
 
 ```txt
 app/                     App Router pages, layout, and global styles
-app/(marketing)/         Reserved route group for marketing pages
-app/(dashboard)/         Reserved route group for future authenticated dashboard
 app/auth/                Authentication placeholder route
 components/layout/       Shared layout components
 components/ui/           Reusable interface components
-data/                    Typed mock product data
+data/                    Typed product, blueprint, and preview data
 docs/                    Delivery governance, roadmap, and architecture notes
-lib/                     Constants and shared configuration
+lib/                     Constants, guidance logic, and shared configuration
 types/                   Shared TypeScript types
 public/                  Static assets
 ```
 
 ## Development Governance
 
-All contributors must follow the Campusify development map in [`docs/DEVELOPMENT_MAP.md`](docs/DEVELOPMENT_MAP.md).
+All contributors must follow the Campusify development map in [`docs/DEVELOPMENT_MAP.md`](docs/DEVELOPMENT_MAP.md) and the data engine strategy in [`docs/DATA_ENGINE.md`](docs/DATA_ENGINE.md).
 
-Every pull request must show measurable improvement in at least one area:
+Every pull request must state which of the 11 modules it advances and must show measurable improvement in at least one area:
 
 - Frontend capability
-- Backend capability
+- Backend or data capability
 - Platform quality
 
 A PR that does not improve user value, system capability, delivery quality, or production readiness should not be merged.
@@ -90,8 +95,8 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Next Steps
 
-1. Add authentication and verified academic identity onboarding.
-2. Build profile creation for students, lecturers, researchers, institutions, and professional bodies.
-3. Expand the institution directory with searchable, typed data models.
-4. Prototype Campus Room sessions for live lectures and office hours.
-5. Introduce an AI scholarship matcher after core data flows are validated.
+1. Build the Lecture Board Room prototype with lecture notes, attendance, assignments, quiz locker, Q&A, and chat.
+2. Build Registration and Academic Identity with the required profile fields.
+3. Expand the Institution Directory with more free, lawful, and attributed records.
+4. Build the Opportunity Gantry with scholarships, grants, loans, jobs, and postgraduate offers.
+5. Add the source registry and verification model for every free data source.
