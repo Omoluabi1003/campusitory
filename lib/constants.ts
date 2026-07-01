@@ -9,7 +9,7 @@ export const siteConfig = {
     lead: "Paul A. K. Iyogun",
     role: "Project Architect and Development Lead",
     location: "Florida, United States of America",
-  },
+  } as const,
   navItems: [
     { label: "Directory", href: "/#directory" },
     { label: "Profiles", href: "/#profiles" },
