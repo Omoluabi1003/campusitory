@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/constants";
 
 export function Footer() {
@@ -7,12 +8,18 @@ export function Footer() {
         <div>
           <p className="text-xl font-semibold">{siteConfig.name}</p>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-white/65">{siteConfig.description}</p>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Product architecture and development by {siteConfig.architect.company}
+          </p>
+          <p className="mt-2 text-xs text-white/50">
+            {siteConfig.architect.lead} · {siteConfig.architect.role} · {siteConfig.architect.location}
+          </p>
         </div>
         <div className="flex flex-wrap gap-4 lg:justify-end">
           {siteConfig.navItems.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm text-white/70 transition hover:text-white">
+            <Link key={item.href} href={item.href} className="text-sm text-white/70 transition hover:text-white">
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
