@@ -126,6 +126,7 @@ export interface Assignment extends AuditFields {
   instructions: string;
   dueAt?: ISODateTime;
   status: AssignmentStatus;
+  maxPoints?: number;
 }
 
 export interface Opportunity extends AuditFields {
