@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import type { Institution } from "@/types";
 
 interface CampusDirectoryExplorerProps {
-  institutions: Institution[];
+  institutions?: Institution[] | null;
 }
 
 const institutionTypeLabels: Record<string, string> = {
@@ -20,28 +20,29 @@ const institutionTypeLabels: Record<string, string> = {
 };
 
 export function CampusDirectoryExplorer({ institutions = [] }: CampusDirectoryExplorerProps) {
+  const safeInstitutions = institutions ?? [];
   const [query, setQuery] = useState("");
   const [country, setCountry] = useState("all");
   const [type, setType] = useState("all");
 
-  const countries = useMemo(() => Array.from(new Set(institutions.map((institution) => institution.country))).sort(), [institutions]);
-  const types = useMemo(() => Array.from(new Set(institutions.map((institution) => institution.type))).sort(), [institutions]);
+  const countries = useMemo(() => Array.from(new Set(safeInstitutions.map((institution) => institution.country))).sort(), [safeInstitutions]);
+  const types = useMemo(() => Array.from(new Set(safeInstitutions.map((institution) => institution.type))).sort(), [safeInstitutions]);
 
   const filteredInstitutions = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
-    return institutions.filter((institution) => {
+    return safeInstitutions.filter((institution) => {
       const matchesQuery =
         !normalizedQuery ||
         institution.name.toLowerCase().includes(normalizedQuery) ||
         institution.country.toLowerCase().includes(normalizedQuery) ||
-        institution.city?.toLowerCase().includes(normalizedQuery);
+        (institution.city?.toLowerCase()?.includes(normalizedQuery) ?? false);
       const matchesCountry = country === "all" || institution.country === country;
       const matchesType = type === "all" || institution.type === type;
 
       return matchesQuery && matchesCountry && matchesType;
     });
-  }, [country, institutions, query, type]);
+  }, [country, safeInstitutions, query, type]);
 
   return (
     <section className="mt-10 rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur">
