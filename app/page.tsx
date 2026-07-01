@@ -3,18 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { features } from "@/data/features";
-import { impactMetrics } from "@/lib/constants";
-
-const sections = [
-  { id: "directory", label: "Institution Directory" },
-  { id: "profiles", label: "Verified Academic Profiles" },
-  { id: "campus-room", label: "Campus Room" },
-  { id: "opportunities", label: "Scholarships and Opportunities" },
-  { id: "research", label: "Research Library" },
-  { id: "ai-engine", label: "AI Academic Engine" },
-  { id: "multilingual", label: "Multilingual Console" },
-  { id: "pricing", label: "Pricing Preview" },
-];
+import { platformModules } from "@/data/platform";
+import { impactMetrics, siteConfig } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -30,26 +20,26 @@ export default function Home() {
               Verified learning, research, and opportunity networks for every campus.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Campusify brings students, lecturers, institutions, researchers, and professional bodies into one secure academic ecosystem built for discovery, trust, and global mobility.
+              Campusify is moving beyond a one-page landing shell into a route-based academic platform represented by {siteConfig.architect.company}.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/auth" className="rounded-full bg-ink px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-academy">
-                Reserve early access
+              <Link href="/dashboard" className="rounded-full bg-ink px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-academy">
+                Open platform dashboard
               </Link>
-              <a href="#features" className="rounded-full border border-ink/15 bg-white/70 px-7 py-4 text-center text-sm font-semibold text-ink transition hover:border-campus hover:text-campus">
-                View MVP modules
-              </a>
+              <Link href="/directory" className="rounded-full border border-ink/15 bg-white/70 px-7 py-4 text-center text-sm font-semibold text-ink transition hover:border-campus hover:text-campus">
+                Explore institution directory
+              </Link>
             </div>
           </div>
           <div className="rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-soft">
             <div className="rounded-[1.5rem] bg-ink p-6 text-white">
               <p className="text-sm uppercase tracking-[0.24em] text-gold">Campus command center</p>
               <div className="mt-8 space-y-4">
-                {sections.slice(0, 5).map((section) => (
-                  <a key={section.id} href={`#${section.id}`} className="flex items-center justify-between rounded-2xl bg-white/8 p-4 transition hover:bg-white/14">
-                    <span>{section.label}</span>
+                {platformModules.slice(0, 5).map((module) => (
+                  <Link key={module.slug} href={`/${module.slug}`} className="flex items-center justify-between rounded-2xl bg-white/8 p-4 transition hover:bg-white/14">
+                    <span>{module.title}</span>
                     <span className="text-gold">↗</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -65,26 +55,14 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="features" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">MVP foundation</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">A premium shell for the academic network.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">Platform modules</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">A connected academic system with dedicated product surfaces.</h2>
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {features.map((feature, index) => (
               <FeatureCard key={feature.title} feature={feature} index={index} />
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {sections.map((section) => (
-              <div id={section.id} key={section.id} className="scroll-mt-28 rounded-3xl border border-white/70 bg-white/70 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Placeholder route</p>
-                <h3 className="mt-3 text-lg font-semibold text-ink">{section.label}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">Structured product space ready for the next build phase.</p>
-              </div>
             ))}
           </div>
         </section>
