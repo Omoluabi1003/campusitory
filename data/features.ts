@@ -7,7 +7,7 @@ export const features: Feature[] = [
     description:
       "Explore universities, colleges, research centers, and professional bodies with filters for region, discipline, verification status, and opportunities.",
     category: "directory",
-    href: "#directory",
+    href: "/directory",
   },
   {
     title: "Verified Academic Profiles",
@@ -15,7 +15,7 @@ export const features: Feature[] = [
     description:
       "Create credible student, lecturer, researcher, and institutional profiles designed for safer academic networking.",
     category: "identity",
-    href: "#profiles",
+    href: "/profiles",
   },
   {
     title: "Campus Room",
@@ -23,7 +23,7 @@ export const features: Feature[] = [
     description:
       "Host virtual lectures, seminars, tutorials, office hours, and cohort rooms with structured participation flows.",
     category: "community",
-    href: "#campus-room",
+    href: "/campus-room",
   },
   {
     title: "Scholarships and Opportunities",
@@ -31,7 +31,7 @@ export const features: Feature[] = [
     description:
       "Surface scholarships, grants, internships, fellowships, competitions, and academic jobs in one clean opportunity hub.",
     category: "opportunity",
-    href: "#opportunities",
+    href: "/opportunities",
   },
   {
     title: "Research Library",
@@ -39,7 +39,7 @@ export const features: Feature[] = [
     description:
       "Organize papers, theses, datasets, and publication trails with contributor attribution and institution context.",
     category: "research",
-    href: "#research",
+    href: "/research",
   },
   {
     title: "AI Academic Engine",
@@ -47,7 +47,7 @@ export const features: Feature[] = [
     description:
       "Prepare a foundation for study planning, scholarship matching, reading summaries, citation support, and academic productivity.",
     category: "ai",
-    href: "#ai-engine",
+    href: "/ai-engine",
   },
   {
     title: "Multilingual Console",
@@ -55,7 +55,7 @@ export const features: Feature[] = [
     description:
       "Design for translated learning spaces, regional academic communities, and globally inclusive onboarding.",
     category: "language",
-    href: "#multilingual",
+    href: "/language",
   },
   {
     title: "Pricing Preview",
@@ -63,6 +63,6 @@ export const features: Feature[] = [
     description:
       "Preview future plans for learners, institutions, and professional bodies without locking the MVP to billing complexity.",
     category: "pricing",
-    href: "#pricing",
+    href: "/pricing",
   },
 ];
