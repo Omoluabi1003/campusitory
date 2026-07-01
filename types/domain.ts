@@ -148,6 +148,7 @@ export interface ResearchItem extends AuditFields {
   authors: string[];
   institutionId?: ID;
   publicationYear?: number;
+  doi?: string;
   abstract?: string;
   documentUrl?: string;
   accessTier: AccessTier;
