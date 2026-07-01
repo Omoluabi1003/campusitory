@@ -165,7 +165,7 @@ export interface ProfessionalOrganization extends AuditFields {
 export interface LanguagePreference extends AuditFields {
   id: ID;
   userId: ID;
-  primaryLanguage: string;
+  preferredLanguage: string;
   supportedLanguages: string[];
 }
 
