@@ -4,6 +4,12 @@ export const siteConfig = {
   name: "Campusify",
   description:
     "A global academic platform for verified communities, research access, virtual lectures, scholarships, AI study tools, and multilingual learning.",
+  architect: {
+    company: "ETL GIS Consulting LLC",
+    lead: "Paul A. K. Iyogun",
+    role: "Project Architect and Development Lead",
+    location: "Florida, United States of America",
+  },
   navItems: [
     { label: "Directory", href: "/#directory" },
     { label: "Profiles", href: "/#profiles" },
