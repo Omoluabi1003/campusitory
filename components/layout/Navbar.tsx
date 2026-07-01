@@ -7,7 +7,12 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Campusify home">
           <span className="grid h-10 w-10 place-items-center rounded-2xl bg-academy text-lg font-bold text-white shadow-soft">C</span>
-          <span className="text-lg font-semibold tracking-tight text-ink">{siteConfig.name}</span>
+          <span>
+            <span className="block text-lg font-semibold tracking-tight text-ink">{siteConfig.name}</span>
+            <span className="hidden text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-campus sm:block">
+              Built by {siteConfig.architect.company}
+            </span>
+          </span>
         </Link>
         <div className="hidden items-center gap-7 lg:flex">
           {siteConfig.navItems.map((item) => (
