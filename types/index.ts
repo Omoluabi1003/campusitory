@@ -1,3 +1,4 @@
+import type { InstitutionType, VerificationStatus } from "./domain";
 export * from "./domain";
 
 export type FeatureCategory =
@@ -24,7 +25,9 @@ export interface Metric {
 }
 
 export interface PlatformModule {
+  id: number;
   slug: string;
+  href: string;
   eyebrow: string;
   title: string;
   shortTitle: string;
@@ -33,4 +36,14 @@ export interface PlatformModule {
   campusLayer: string[];
   trustLayer: string[];
   pathway: string[];
+}
+
+export interface SourceRegistryEntry {
+  source: string;
+  verificationStatus: VerificationStatus;
+  lastUpdated: string;
+  country: string;
+  institutionType: InstitutionType;
+  license: string;
+  confidence: "low" | "medium" | "high";
 }

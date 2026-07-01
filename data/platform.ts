@@ -1,96 +1,174 @@
-import type { PlatformModule } from "@/types";
+import type { PlatformModule, SourceRegistryEntry } from "@/types";
 
 export const platformModules: PlatformModule[] = [
   {
-    slug: "directory",
-    eyebrow: "Global discovery",
-    title: "Institution Directory",
-    shortTitle: "Directory",
-    description: "Search and evaluate universities, polytechnics, colleges, vocational schools, nursing schools, military schools, aviation schools, culinary schools, music institutes, and professional bodies.",
-    signal: "Verified institution discovery with country, school-type, and trust indicators.",
-    campusLayer: ["Global school discovery", "Trust-ready institution cards", "Country and discipline pathways"],
-    trustLayer: ["Verification signals", "Institution context", "Clear comparison cues"],
-    pathway: ["Discover institutions", "Compare academic fit", "Continue into verified profiles"]
+    id: 1,
+    slug: "institution-network",
+    href: "/institution-network",
+    eyebrow: "Global directory",
+    title: "Institution Network",
+    shortTitle: "Institutions",
+    description: "Global directory of universities, polytechnics, nursing schools, colleges, vocational institutions, military academies, aviation schools, culinary schools, music schools, and other accredited institutions.",
+    signal: "Verified institution discovery organized by country, location, institution type, and academic pathway.",
+    campusLayer: ["World-to-institution discovery", "Institution category comparisons", "Faculty and department entry points"],
+    trustLayer: ["Source-backed institution records", "Verification status", "Country and license context"],
+    pathway: ["Find an institution", "Review verified context", "Continue into academic identity"]
   },
   {
-    slug: "profiles",
+    id: 2,
+    slug: "academic-identity",
+    href: "/academic-identity",
     eyebrow: "Verified identity",
-    title: "Academic Profiles",
-    shortTitle: "Profiles",
-    description: "Build credible identities for students, lecturers, researchers, alumni, institutions, and professional organizations with verification status and role-aware experiences.",
-    signal: "Role-aware identity for safer academic networking and institution trust.",
-    campusLayer: ["Student and faculty identity", "Institution and alumni presence", "Role-specific profile paths"],
-    trustLayer: ["Verification status", "Ownership clarity", "Professional academic presence"],
-    pathway: ["Create profile", "Confirm academic role", "Connect across campus networks"]
+    title: "Academic Identity",
+    shortTitle: "Identity",
+    description: "Registration, profiles, verification, departments, faculties, courses, lecturers, students, and institutional identity.",
+    signal: "Role-aware profiles connect students, lecturers, researchers, alumni, institutions, and professional bodies.",
+    campusLayer: ["Profiles and registration", "Faculties, departments, and courses", "Lecturer and student identity"],
+    trustLayer: ["Verification status", "Role clarity", "Institutional ownership"],
+    pathway: ["Create profile", "Confirm academic role", "Join the right campus layer"]
   },
   {
+    id: 3,
     slug: "campus-room",
+    href: "/campus-room",
     eyebrow: "Live learning",
     title: "Campus Room",
     shortTitle: "Campus Room",
-    description: "A structured academic boardroom for lectures, notes, attendance, quizzes, assignments, Q&A, office hours, chat, and future live learning integrations.",
-    signal: "A structured learning room for classes, faculty interaction, and coursework flow.",
-    campusLayer: ["Lecture room flow", "Attendance and assignments", "Q&A and office hours"],
-    trustLayer: ["Course context", "Session clarity", "Participation records"],
+    description: "Virtual lecture rooms, attendance, assignments, quizzes, lecture notes, chat, live collaboration, and academic communication.",
+    signal: "Structured spaces for lectures, coursework, faculty interaction, and class collaboration.",
+    campusLayer: ["Lecture rooms", "Attendance and assignments", "Chat and collaboration"],
+    trustLayer: ["Course context", "Participation records", "Session clarity"],
     pathway: ["Enter a room", "Follow the lecture path", "Submit and review academic work"]
   },
   {
-    slug: "opportunities",
-    eyebrow: "Access engine",
-    title: "Scholarships and Opportunities",
-    shortTitle: "Scholarships",
-    description: "A global opportunity hub for scholarships, grants, loans, internships, fellowships, competitions, academic jobs, postgraduate programs, and exchange openings.",
-    signal: "A guided access layer for scholarships, fellowships, internships, and academic jobs.",
-    campusLayer: ["Scholarship discovery", "Internship and fellowship hub", "Academic job visibility"],
-    trustLayer: ["Eligibility cues", "Deadline awareness", "Saved opportunity paths"],
-    pathway: ["Find an opportunity", "Review eligibility", "Save and prepare materials"]
+    id: 4,
+    slug: "academic-social",
+    href: "/academic-social",
+    eyebrow: "Scholarly community",
+    title: "Academic Social",
+    shortTitle: "Social",
+    description: "Personal pages, follows, reactions, live sessions, academic news, research updates, hashtags, discussions, and collaboration.",
+    signal: "Academic conversation centered on learning, research, collaboration, and campus credibility.",
+    campusLayer: ["Personal academic pages", "News and research updates", "Discussions and live sessions"],
+    trustLayer: ["Verified contributors", "Academic context", "Community standards"],
+    pathway: ["Follow academic interests", "Join discussions", "Collaborate with trusted peers"]
   },
   {
-    slug: "research",
+    id: 5,
+    slug: "opportunities",
+    href: "/opportunities",
+    eyebrow: "Access engine",
+    title: "Opportunities",
+    shortTitle: "Opportunities",
+    description: "Scholarships, grants, fellowships, student loans, postgraduate opportunities, internships, and academic careers.",
+    signal: "A guided access layer for funding, internships, fellowships, competitions, and academic careers.",
+    campusLayer: ["Scholarships and grants", "Internships and fellowships", "Academic careers"],
+    trustLayer: ["Eligibility cues", "Deadline awareness", "Official portal references"],
+    pathway: ["Find an opportunity", "Review eligibility", "Prepare materials"]
+  },
+  {
+    id: 6,
+    slug: "research-library",
+    href: "/research-library",
     eyebrow: "Knowledge graph",
     title: "Research Library",
     shortTitle: "Research",
-    description: "A research and academic material layer for theses, papers, journals, books, datasets, lecture materials, institutional publications, and scholarly discovery.",
-    signal: "A scholarly library for research materials, publication trails, and institutional knowledge.",
-    campusLayer: ["Paper and thesis discovery", "Dataset and journal context", "Institutional publication trails"],
-    trustLayer: ["Citation metadata", "Author attribution", "Access-level clarity"],
+    description: "Books, journals, papers, theses, dissertations, academic resources, and institutional publications.",
+    signal: "Scholarly discovery for research materials, publication trails, and institutional knowledge.",
+    campusLayer: ["Books and journals", "Papers, theses, and dissertations", "Institutional publications"],
+    trustLayer: ["Citation metadata", "Author attribution", "Repository source context"],
     pathway: ["Search knowledge", "Review source context", "Build a credible research trail"]
   },
   {
-    slug: "ai-engine",
+    id: 7,
+    slug: "professional-network",
+    href: "/professional-network",
+    eyebrow: "Professional bodies",
+    title: "Professional Network",
+    shortTitle: "Professional",
+    description: "Professional organizations, chartered institutes, fellowships, and international academic societies.",
+    signal: "Connect academic growth with professional recognition, societies, fellowships, and chartered institutes.",
+    campusLayer: ["Professional organizations", "Chartered institutes", "International societies"],
+    trustLayer: ["Organization verification", "Membership pathways", "Field and country context"],
+    pathway: ["Explore organizations", "Review membership fit", "Connect credentials to career growth"]
+  },
+  {
+    id: 8,
+    slug: "student-life",
+    href: "/student-life",
+    eyebrow: "Campus experience",
+    title: "Student Life",
+    shortTitle: "Student Life",
+    description: "Student unions, university games, AI competitions, innovation challenges, and campus activities.",
+    signal: "Student engagement across campus representation, events, competitions, innovation, and wellness.",
+    campusLayer: ["Student unions", "University games", "Innovation challenges"],
+    trustLayer: ["Organizer clarity", "Institutional alignment", "Safe participation cues"],
+    pathway: ["Discover activities", "Join campus groups", "Build student achievement"]
+  },
+  {
+    id: 9,
+    slug: "academic-intelligence",
+    href: "/academic-intelligence",
     eyebrow: "Academic intelligence",
-    title: "AI Academic Engine",
-    shortTitle: "AI Engine",
-    description: "An AI layer for academic search, scholarship matching, lecture summaries, study schedules, multilingual support, research assistance, and safer knowledge discovery.",
-    signal: "Academic intelligence for study planning, scholarship matching, and research assistance.",
-    campusLayer: ["Study planning", "Scholarship matching", "Research assistance"],
-    trustLayer: ["Clear usage boundaries", "Safer discovery", "Academic context first"],
+    title: "Academic Intelligence",
+    shortTitle: "Intelligence",
+    description: "Campusify AI search, recommendations, scheduling, academic assistant, research discovery, and intelligent matching.",
+    signal: "Academic assistance for study planning, scholarship matching, research discovery, and guided search.",
+    campusLayer: ["AI search", "Recommendations and scheduling", "Research discovery"],
+    trustLayer: ["Academic context first", "Transparent guidance", "Source-aware outputs"],
     pathway: ["Ask with academic intent", "Review guided outputs", "Continue into the right module"]
   },
   {
-    slug: "language",
-    eyebrow: "Borderless access",
-    title: "Multilingual Console",
-    shortTitle: "Language",
-    description: "A language console for English, French, Chinese, Japanese, Portuguese, Spanish, and future regional languages across onboarding, learning rooms, and academic discovery.",
-    signal: "Language access for global onboarding, learning rooms, and academic discovery.",
-    campusLayer: ["Global language support", "Regional academic communities", "Translated learning spaces"],
-    trustLayer: ["Language preference clarity", "Inclusive onboarding", "Consistent terminology"],
-    pathway: ["Choose language", "Explore localized pathways", "Collaborate across regions"]
+    id: 10,
+    slug: "trust-access",
+    href: "/trust-access",
+    eyebrow: "Trust and access",
+    title: "Trust & Access",
+    shortTitle: "Trust",
+    description: "Subscriptions, access tiers, institutional verification, KYC, identity protection, and platform security.",
+    signal: "Transparent access, verification, and identity protection for learners, institutions, and partners.",
+    campusLayer: ["Access tiers", "Institutional verification", "Identity protection"],
+    trustLayer: ["KYC readiness", "Restricted access signals", "Security-first platform controls"],
+    pathway: ["Review access levels", "Verify identity", "Scale with institutional needs"]
   },
   {
-    slug: "pricing",
-    eyebrow: "Sustainable model",
-    title: "Pricing and Access",
-    shortTitle: "Access",
-    description: "A structured access model for free users, paid subscribers, institutions, restricted pages, KYC, and future identity-theft prevention workflows.",
-    signal: "Transparent access planning for learners, institutions, and professional bodies.",
-    campusLayer: ["Learner access", "Institution tiers", "Professional body pathways"],
-    trustLayer: ["Plan clarity", "Restricted area signals", "Identity protection readiness"],
-    pathway: ["Review access levels", "Choose the right path", "Scale with institutional needs"]
+    id: 11,
+    slug: "global-languages",
+    href: "/global-languages",
+    eyebrow: "Borderless access",
+    title: "Global Languages",
+    shortTitle: "Languages",
+    description: "Multilingual experience supporting English, French, Portuguese, Spanish, Chinese, Japanese, and future languages.",
+    signal: "Language access for global onboarding, learning rooms, research, and academic discovery.",
+    campusLayer: ["English", "French, Portuguese, and Spanish", "Chinese, Japanese, and future languages"],
+    trustLayer: ["Language preference clarity", "Inclusive onboarding", "Consistent academic terminology"],
+    pathway: ["Choose language", "Explore localized pathways", "Collaborate across regions"]
   }
 ];
 
+export const platformHierarchy = [
+  "World", "Country", "Region", "State", "City", "Institution", "Faculty", "Department", "Programme", "Course", "Lecture", "Research", "Opportunity", "Professional Organization", "Career"
+];
+
+export const sourceRegistry: SourceRegistryEntry[] = [
+  { source: "Official institution websites", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "university", license: "Public institutional reference", confidence: "high" },
+  { source: "Government education directories", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "college", license: "Government open directory", confidence: "high" },
+  { source: "OpenAlex", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "professional_body", license: "Open scholarly metadata", confidence: "medium" },
+  { source: "Crossref", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "professional_body", license: "Open citation metadata", confidence: "medium" },
+  { source: "DOAJ", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "professional_body", license: "Open journal directory", confidence: "medium" },
+  { source: "Public institutional repositories", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "university", license: "Repository-specific public terms", confidence: "medium" },
+  { source: "Official scholarship portals", verificationStatus: "pending", lastUpdated: "2026-07-01", country: "Global", institutionType: "college", license: "Official opportunity reference", confidence: "high" }
+];
+
 export function getPlatformModule(slug: string) {
-  return platformModules.find((module) => module.slug === slug);
+  const aliases: Record<string, string> = {
+    directory: "institution-network",
+    profiles: "academic-identity",
+    research: "research-library",
+    "ai-engine": "academic-intelligence",
+    pricing: "trust-access",
+    language: "global-languages",
+  };
+
+  return platformModules.find((module) => module.slug === (aliases[slug] ?? slug));
 }

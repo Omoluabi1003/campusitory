@@ -62,7 +62,7 @@ export function generateCampusInsight(input: string) {
     return {
       intent,
       title: "Campus Room readiness",
-      response: "Campus Room is prepared around live lectures, attendance, notes, assignments, quizzes, and class participation. The next implementation step is connecting courses and sessions to the domain model.",
+      response: "Campus Room brings together live lectures, attendance, notes, assignments, quizzes, and class participation so each course can move through a clear academic workflow.",
       recommendedAction: "Start with course setup, lecture sessions, attendance records, and assignment workflows.",
     };
   }
