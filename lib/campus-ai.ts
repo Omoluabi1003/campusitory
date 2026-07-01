@@ -2,7 +2,11 @@ import { liveInstitutions, liveOpportunities, liveResearchItems } from "@/data/c
 
 export type CampusAiIntent = "schools" | "scholarships" | "research" | "campus-room" | "general";
 
-export function detectCampusIntent(input: string): CampusAiIntent {
+export function detectCampusIntent(input: unknown): CampusAiIntent {
+  if (!input || typeof input !== "string") {
+    return "general";
+  }
+
   const query = input.toLowerCase();
 
   if (query.includes("school") || query.includes("university") || query.includes("college") || query.includes("polytechnic")) {
@@ -24,7 +28,7 @@ export function detectCampusIntent(input: string): CampusAiIntent {
   return "general";
 }
 
-export function generateCampusInsight(input: string) {
+export function generateCampusInsight(input: unknown) {
   const intent = detectCampusIntent(input);
 
   if (intent === "schools") {
