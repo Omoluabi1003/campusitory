@@ -194,7 +194,7 @@ Backend deliverables:
 
 ## Immediate Next PR Sequence
 
-1. ETL representation and development map.
+1. [x] ETL representation and development map (Current PR).
 2. Auth and role onboarding shell.
 3. Shared domain types for users, institutions, courses, opportunities, and research items.
 4. Institution directory frontend and seed data.
