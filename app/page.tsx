@@ -47,7 +47,7 @@ export default function Home() {
               Verified learning, research, and opportunity networks for every campus.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Campusify is a premium academic infrastructure platform represented by {siteConfig.architect.company}, connecting discovery, identity, live learning, research, scholarships, and academic intelligence.
+              Campusitory is a premium academic infrastructure platform represented by {siteConfig.architect.company}, connecting discovery, identity, live learning, research, scholarships, and academic intelligence.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/dashboard" className="rounded-full bg-ink px-7 py-4 text-center text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-academy">
@@ -78,7 +78,7 @@ export default function Home() {
                     <div className="mt-4 flex items-start justify-between gap-4">
                       <div>
                         <h2 className="text-2xl font-semibold">{module.shortTitle}</h2>
-                        <p className="mt-3 text-sm leading-6 text-white/68">{module.signal}</p>
+                        <p className="mt-3 text-sm leading-7 text-white/68">{module.description}</p>
                       </div>
                       <span className="text-gold">↗</span>
                     </div>
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative mx-auto grid max-w-7xl gap-4 px-4 pb-12 sm:px-6 md:grid-cols-3 lg:px-8">
+        <section className="mx-auto grid max-w-7xl gap-4 px-4 pb-12 sm:px-6 md:grid-cols-3 lg:px-8">
           {impactMetrics.map((metric) => (
             <div key={metric.label} className="rounded-3xl border border-white/70 bg-white/70 p-6 shadow-sm backdrop-blur">
               <p className="text-3xl font-bold text-academy">{metric.value}</p>
@@ -98,51 +98,38 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">Enterprise platform modules</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">A connected academic system organized around eleven enduring modules.</h2>
-          </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {platformModules.map((module) => (
-              <Link key={module.slug} href={module.href} className="rounded-3xl border border-white/70 bg-white/75 p-6 shadow-soft transition hover:-translate-y-1 hover:border-campus/40">
-                <p className="font-serif text-3xl text-gold/75">{String(module.id).padStart(2, "0")}</p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.24em] text-campus">{module.eyebrow}</p>
-                <h3 className="mt-3 text-xl font-semibold text-ink">{module.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{module.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="relative mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">How Campusify works</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Process-based academic pathways from discovery to collaboration.</h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {processSteps.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-white/70 bg-white/75 p-6 shadow-soft">
-                <span className="font-serif text-4xl text-gold/70">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="mt-5 text-xl font-semibold text-ink">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
-              </div>
-            ))}
+        <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-campus">How Campusitory works</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                From discovery to verified academic collaboration.
+              </h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {processSteps.map((step, index) => (
+                <div key={step.title} className="premium-card rounded-3xl border border-white/70 bg-white/75 p-6 shadow-soft backdrop-blur" style={{ animationDelay: `${index * 120}ms` }}>
+                  <p className="text-sm font-semibold text-campus">0{index + 1}</p>
+                  <h3 className="mt-4 text-xl font-semibold text-ink">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-          <div className="rounded-[2rem] bg-ink p-8 text-white shadow-soft md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Campusify advantage</p>
-            <div className="mt-6 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">A premium, modular foundation for global academic infrastructure.</h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {advantages.map((advantage) => (
-                  <div key={advantage} className="rounded-2xl border border-white/10 bg-white/8 p-4 text-sm leading-6 text-white/72">
-                    {advantage}
-                  </div>
-                ))}
-              </div>
+        <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <div className="rounded-[2rem] border border-white/70 bg-ink p-8 text-white shadow-soft">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Campusitory advantage</p>
+            <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
+              A disciplined academic operating system, not a loose set of pages.
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {advantages.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/8 p-5 text-sm leading-7 text-white/72">
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </section>
