@@ -1,0 +1,27 @@
+{
+  "name": "Campusitory",
+  "short_name": "Campusitory",
+  "description": "Knowledge in Motion. A global academic platform for institutions, lectures, research, opportunities, and intelligent discovery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ed",
+  "theme_color": "#0a2240",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/site-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
