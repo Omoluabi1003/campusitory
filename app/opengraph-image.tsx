@@ -26,31 +26,35 @@ export default function OpenGraphImage() {
         <div
           style={{
             alignItems: "center",
-            background: "rgba(255,255,255,0.78)",
-            border: "1px solid rgba(255,255,255,0.85)",
+            background: "#0a2240",
             borderRadius: "42px",
             boxShadow: "0 30px 80px rgba(10, 16, 32, 0.14)",
+            color: "#f7f4ed",
             display: "flex",
+            flexDirection: "column",
+            fontSize: 220,
+            fontWeight: 700,
             height: 440,
             justifyContent: "center",
-            overflow: "hidden",
+            lineHeight: 1,
             width: 440,
           }}
         >
-          <img src={brandAssetConfig.sourceLogo} alt="" width="440" height="440" />
+          <div>C</div>
+          <div style={{ background: "#d6682c", borderRadius: 999, height: 16, marginTop: 18, width: 210 }} />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18, width: 590 }}>
-          <div style={{ color: "#d6682c", fontSize: 24, fontWeight: 800, letterSpacing: 6, textTransform: "uppercase" }}>
+          <div style={{ color: "#d6682c", fontSize: 24, fontWeight: 700, letterSpacing: 6, textTransform: "uppercase" }}>
             {brandAssetConfig.tagline}
           </div>
-          <div style={{ color: "#0a2240", fontFamily: "serif", fontSize: 86, fontWeight: 900, lineHeight: 0.94 }}>
+          <div style={{ color: "#0a2240", fontSize: 86, fontWeight: 700, lineHeight: 0.94 }}>
             {brandAssetConfig.name}
           </div>
           <div style={{ background: "#d6682c", height: 8, width: 410 }} />
           <div style={{ color: "#4b5563", fontSize: 30, lineHeight: 1.35 }}>
             Global academic platform for institutions, lectures, research, opportunities, and intelligent discovery.
           </div>
-          <div style={{ color: "#0a2240", fontSize: 23, fontWeight: 800, marginTop: 22 }}>
+          <div style={{ color: "#0a2240", fontSize: 23, fontWeight: 700, marginTop: 22 }}>
             Designed and Developed by {brandAssetConfig.architect}
           </div>
         </div>
