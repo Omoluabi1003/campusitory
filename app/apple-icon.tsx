@@ -1,8 +1,7 @@
 import { ImageResponse } from "next/og";
-import { brandAssetConfig } from "@/lib/brand-assets";
 
 export const runtime = "edge";
-export const alt = "Campusitory Apple touch icon";
+export const alt = "Campusitory touch icon";
 export const size = {
   width: 180,
   height: 180,
@@ -15,14 +14,20 @@ export default function AppleIcon() {
       <div
         style={{
           alignItems: "center",
-          background: "#f7f4ed",
+          background: "#0a2240",
+          color: "#f7f4ed",
           display: "flex",
+          flexDirection: "column",
+          fontSize: 82,
+          fontWeight: 700,
           height: "100%",
           justifyContent: "center",
+          lineHeight: 1,
           width: "100%",
         }}
       >
-        <img src={brandAssetConfig.sourceLogo} alt="" width="180" height="180" />
+        <div>C</div>
+        <div style={{ background: "#d6682c", borderRadius: 999, height: 8, marginTop: 8, width: 78 }} />
       </div>
     ),
     size,
