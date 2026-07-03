@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { brandAssetConfig } from "@/lib/brand-assets";
 
 export const runtime = "edge";
 export const alt = "Campusitory logo";
@@ -15,14 +14,21 @@ export default function Icon() {
       <div
         style={{
           alignItems: "center",
-          background: "#f7f4ed",
+          background: "#0a2240",
+          borderRadius: "96px",
+          color: "#f7f4ed",
           display: "flex",
+          flexDirection: "column",
+          fontSize: 220,
+          fontWeight: 700,
           height: "100%",
           justifyContent: "center",
+          lineHeight: 1,
           width: "100%",
         }}
       >
-        <img src={brandAssetConfig.sourceLogo} alt="" width="512" height="512" />
+        <div>C</div>
+        <div style={{ background: "#d6682c", borderRadius: 999, height: 18, marginTop: 16, width: 220 }} />
       </div>
     ),
     size,
