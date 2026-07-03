@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { brandAssetConfig } from "@/lib/brand-assets";
 import { siteConfig } from "@/lib/constants";
 
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/50 bg-paper/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="Campusify home">
-          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-academy text-lg font-bold text-white shadow-soft">C</span>
+        <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="Campusitory home">
+          <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-ink/10">
+            <img src={brandAssetConfig.sourceLogo} alt="Campusitory" className="h-full w-full object-cover" />
+          </span>
           <span className="text-lg font-semibold tracking-tight text-ink">{siteConfig.name}</span>
         </Link>
         <div className="hidden flex-1 items-center gap-2 overflow-x-auto xl:flex">
