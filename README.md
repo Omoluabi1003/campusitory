@@ -1,10 +1,10 @@
-# Campusify
+# Campusitory
 
-Campusify is a global academic platform connecting verified students, lecturers, institutions, researchers, and professional bodies through virtual lectures, research access, scholarships, AI study tools, multilingual learning, and secure academic communities.
+Campusitory is a global academic platform connecting verified students, lecturers, institutions, researchers, and professional bodies through virtual lectures, research access, scholarships, AI study tools, multilingual learning, and secure academic communities.
 
 ## Project Representation
 
-Campusify development architecture is represented by **ETL GIS Consulting LLC**, with **Paul A. K. Iyogun** serving as Project Architect and Development Lead.
+Campusitory development architecture is represented by **ETL GIS Consulting LLC**, with **Paul A. K. Iyogun** serving as Project Architect and Development Lead.
 
 Every development decision should preserve the product posture as secure global academic infrastructure, not a generic learning management system.
 
