@@ -1,5 +1,19 @@
 # Campusitory
 
+## Project at a glance
+
+**Category:** Global academic collaboration platform  
+**What it does:** Connect students, lecturers, institutions and research communities through an evolving academic portal  
+**Audience:** Users, technical contributors, project evaluators and potential partners  
+**Repository:** https://github.com/Omoluabi1003/campusitory
+
+**Current implementation boundary:** The current documented MVP uses typed mock data and a placeholder authentication route; production identity and persistence are not yet implemented.
+
+This README documents the product direction and its implementation details. Planned or experimental features should not be interpreted as production-ready without verification in the code and deployment.
+
+---
+
+
 Campusitory is a global academic platform connecting verified students, lecturers, institutions, researchers, and professional bodies through virtual lectures, research access, scholarships, AI study tools, multilingual learning, and secure academic communities.
 
 ## Project Representation
